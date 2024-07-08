@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Temperature Converter</title>
+    <!-- <link rel="stylesheet" href="temp_converter.css"> -->
+     <style>
+        #container{
+    align-items:center;
+    margin-left: 220px;
+    margin-top: 200px;
+    margin-right: 220px;
+    background-color: #f2f2f2;
+    padding:20px;
+    border-radius: 15%;
+
+}
+body{
+    background: linear-gradient(to right ,#614385,#516395);
+}
+#submi{
+    height: 50px;
+    width: 150px;
+    background-color: #2dda16;
+}
+input[type="submit"]:hover
+{
+    background: linear-gradient(to right ,#854343,#6995511c);
+    cursor:pointer;
+    }
+     </style>
+</head>
+<body>
+    
+
+<script >
+    function convert(){
+    var a=document.getElementById("temperature").value;
+    var b=document.getElementById("totemp").value;
+    if(b=='Fahrenheit'){
+       var f=(a * 9/5) + 32;
+       document.getElementById("result").innerHTML=f+"&degF";
+    }
+    else{
+        var c = 5/9 * (a-32);
+        document.getElementById("result").innerHTML=c+"&degC";
+    }
+}
+</script>
+    <div id="container" align="center">
+        
+
+<h1>Temperature Converter</h1>
+        <h3>Enter the Temperature</h3>
+        <input type="text" id="temperature" placeholder="enter Temperature" required>
+        <h3>Convert To</h3>
+        <select id="totemp" required>
+
+        <option>Fahrenheit</option>
+      <option>Celsius</option>
+
+        </select>
+        <br><br><br>
+        <p id="result"></p>
+        
+
+<input type="submit" value="CONVERT" id="submi" onclick="convert()">
+         
+    </div>
+</body>
+</html>....
